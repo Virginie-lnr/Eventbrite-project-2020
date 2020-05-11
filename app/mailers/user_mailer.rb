@@ -7,4 +7,5 @@ class UserMailer < ApplicationMailer
     @url = 'https://eventbrite-2020.herokuapp.com/'
 
     mail(to: @user.email, subject: 'Bienvenue sur notre super site Eventbrite!')
+  end
 end
