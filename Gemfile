@@ -66,3 +66,5 @@ gem "table_print", "~> 1.5"
 gem "faker", "~> 2.11"
 
 gem "dotenv-rails", "~> 2.7"
+
+gem "letter_opener", "~> 1.7"
