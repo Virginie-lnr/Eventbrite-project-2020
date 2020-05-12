@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   has_many :users, through: :attendances
 
   # Un événement appartient à un administrateur (utilisateur).
-  belongs_to :admin, class_name: "User"
+  belongs_to :admin, class_name: "User", optional: true
 
   # presence obligatoire
   validates :start_date, :duration, :title, :description, :price, :location,

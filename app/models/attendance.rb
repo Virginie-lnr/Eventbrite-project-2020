@@ -1,7 +1,5 @@
 class Attendance < ApplicationRecord
 
-  # after_create :
-
-  belongs_to :user
-  belongs_to :event
+  belongs_to :user, optional: true
+  belongs_to :event, optional: true
 end
