@@ -3,5 +3,4 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 end
 
-
-# User.create(first_name:"Vivi", last_name:"coucou" email:"vivi@yopmail.com")
+# User.create(first_name:"Vivi", last_name:"coucou", email:"vivi@yopmail.com")

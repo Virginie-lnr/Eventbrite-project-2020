@@ -68,3 +68,5 @@ gem "faker", "~> 2.11"
 gem "dotenv-rails", "~> 2.7"
 
 gem "letter_opener", "~> 1.7"
+
+gem "devise", "~> 4.7"
