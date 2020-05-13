@@ -1,1 +1,14 @@
-show event
+<div class="card-deck justify-content-center">
+    <div class="col-lg-3 col-md-6 mb-3">
+      <div class="card text-center my-3">
+        <div class="card-body">
+          <h5 class="card-title ">Evènement n° <%= @event.id %></h5>
+          <h5 class="card-title text-secondary"> Titre : <%= @event.title%></h5>
+          <p class="card-text"> Début: <%= @event.start_date %> </p>
+          <p class="card-text"> Prix: <%= @event.price %>€</p>
+          <p class="card-text"> Durée: <%= @event.duration %></p>
+          <p class="card-text"> Lieu de l'évènement: <%= @event.location %></p>
+        </div>
+      </div>
+    </div>
+</div>

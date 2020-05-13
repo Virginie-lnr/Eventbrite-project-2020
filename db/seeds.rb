@@ -13,12 +13,12 @@ Event.destroy_all
 Attendance.destroy_all
 
 15.times do
-  user = User.create(
+  user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     description: Faker::Hipster.sentence, 
     email: Faker::Name.first_name+"@yopmail.com",
-    encrypted_password: Faker::Internet.password
+    password: Faker::Internet.password
   )
 end
 puts "Les utilisateurs ont été créé"

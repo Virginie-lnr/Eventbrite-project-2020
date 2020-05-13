@@ -11,8 +11,8 @@
       <div class="card text-center my-3">
         <div class="card-body">
           <h5 class="card-title ">Evènement n° <%= event.id %></h5>
-          <h5 class="card-title text-secondary"> Title : <%= event.title%></h5>
-          <p class="card-text"> Début: <%= event.start_date %> </p>
+          <h5 class="card-title text-secondary"> Titre : <%= event.title%></h5>
+          <p class="card-text"> Lieu de l'évènement: <%= event.location %></p>
           <a href="<%= event_path(event.id) %>" class="btn btn-info text-center">Voir l'évenement</a><br><br>
         </div>
       </div>
