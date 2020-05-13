@@ -25,9 +25,9 @@ puts "Les utilisateurs ont été créé"
 
 15.times do
   event = Event.create!(
-    start_date: Faker::Date.forward(days: 30),
-    duration: Faker::Number.between(from: 1, to: 10),
-    title: Faker::Lorem.characters(number: 7),
+    start_date: Faker::Time.forward(days: 360),
+    duration: Faker::Number.between(from: 10, to: 10),
+    title: Faker::Book.title,
     description: Faker::Lorem.paragraph,
     price: Faker::Number.within(range: 1..100),
     location: Faker::Address.city,
