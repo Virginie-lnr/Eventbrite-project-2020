@@ -14,6 +14,12 @@
  *= require_self
  */
 
- #jumbotron_welcome{
-   background-color: #e74c3c;
- }
+ .jumbotron {
+  width: 99.25vw;
+  height: 350px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.4) 100%),
+  url("/assets/jumbotron/gradient2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
