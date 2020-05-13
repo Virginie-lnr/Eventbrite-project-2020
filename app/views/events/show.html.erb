@@ -8,6 +8,10 @@
           <p class="card-text"> Prix: <%= @event.price %>€</p>
           <p class="card-text"> Durée: <%= @event.duration %></p>
           <p class="card-text"> Lieu de l'évènement: <%= @event.location %></p>
+          <% if current_user == @event.admin %>
+            <a href="<%= edit_event_path(@event.id) %>" class="btn btn-outline-secondary text-center ml-3 mt-2">Editer l'évènement</a>
+            <a href="<%= event_path(@event.id) %>" class="btn btn-danger text-center ml-3 mt-2" data-confirm="are you sure?" data-method="DELETE">Supprimer l'évènement</a>
+          <% end %>
         </div>
       </div>
     </div>

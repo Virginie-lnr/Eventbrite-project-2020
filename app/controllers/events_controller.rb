@@ -31,4 +31,26 @@ class EventsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to root_path
+  end
+
+  def edit 
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    event_params = params.require(:event).permit(:title, :description)
+    if @event.update(event_params)
+      flash[:success] = "L'évènement a été modifié avec succès!"
+      redirect_to events_path
+    else
+      flash[:error] = "L'évènement n'a pas pu être modifié..."
+      render :edit
+    end
+  end
 end
