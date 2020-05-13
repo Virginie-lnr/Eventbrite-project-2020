@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   belongs_to :admin, class_name: "User", optional: true
 
   # presence obligatoire
-  validates :start_date, :duration, :title, :description, :price, :location,
+  validates :duration, :title, :description, :price, :location,
   presence: true
 
   validates :title, 
