@@ -1,14 +1,22 @@
 
-<div class="container mt-5">
-  <div class="row">
-  <div class="col-lg-5">
-    <img class="img-fluid rounded mb-4" src="http://placehold.it/750x450" alt="">
-  </div>
-  <div class="col-lg-5">
-    <h2><%= @user.email %></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-  </div>
+<!-- Ajout d'un avatar-->
+<div class="text-center">
+  <h3 class="mt-3">Avatar actuel pour l'utilisateur <%=@user.id%></h3>
+  <%if @user.avatar.attached?%>
+    <%= image_tag @user.avatar, alt: 'avatar' %>
+  <%else%>
+    <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
+  <%end%>
+
+  <h4>Souhaitez-vous changer d'avatar ?</h4>
+  <%= form_tag user_avatars_path(@user), multipart: true do %>
+    <%= file_field_tag :avatar %>
+    <%= submit_tag "mettre à jour" %>
+  <% end %>
 </div>
+<!-- Fin ajout d'avatar-->
+
+
 </div>
+
 
