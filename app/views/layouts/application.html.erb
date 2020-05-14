@@ -70,6 +70,7 @@
 <% end %> 
 <!-- FIN Navbar -->
 
+
     <% if flash[:success] %>
     <div class="alert alert-success">
       <%= flash[:success] %>
@@ -83,6 +84,13 @@
     <% end %>
 
     <%= yield %>
+
+<footer class="py-3 bg-dark mt-5">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; made by Virginie 🐯2020</p>
+  </div>
+  <!-- /.container -->
+</footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
