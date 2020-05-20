@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  skip_before_action :verify_authenticity_token
 
   # order by most recents first
   def index
@@ -21,8 +22,9 @@ class EventsController < ApplicationController
                        duration: params[:event][:duration],
                        description: params[:event][:description],
                        price: params[:event][:price],
-                       location: params[:event][:location]
-                       )
+                       location: params[:event][:location])
+      # @event.avatar_event.attach(params[:avatar_event])
+                       
     if @event.save
       flash[:success] = "L'évènement a été créé avec succès!"
       redirect_to root_path
@@ -44,7 +46,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    event_params = params.require(:event).permit(:title, :description)
+    event_params = params.require(:event).permit(:title, :description, :avatar)
     if @event.update(event_params)
       flash[:success] = "L'évènement a été modifié avec succès!"
       redirect_to events_path

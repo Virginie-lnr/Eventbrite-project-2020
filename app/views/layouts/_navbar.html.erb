@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <%# <link rel="stylesheet" href="vendor/assets/stylesheets/bootstrap.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="app/assets/stylesheets/style.css"> %>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bc256b04c3.js" crossorigin="anonymous"></script>
+
+    <title>Kit UI Eventbrite</title>
+  </head>
+  <body>
+
+<% if user_signed_in? %> 
+
+    <nav class="navbar navbar-expand-lg" >
+      <a class="navbar-brand text-white" href="<%= root_path %>">Eventbrite</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="<%= new_event_path %>">Créer un évènement <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+        </ul>
+    
+      <div class="btn-group">
+        <button type="button" class="nav-item btn btn-default text-white">Mon profile</button>
+        <button type="button" class="btn btn-default dropdown-toggle text-white" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu" >
+          <a class="dropdown-item" href="<%= edit_user_registration_path %>">Editer mon profile</a>
+          <a class="dropdown-item" href="<%= user_path(current_user) %>">Voir mon profile</a>
+          <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="DELETE">Se déconnecter</a>
+        </div>
+      </div>
+     </div>
+    </nav>
+
+    <% else %>
+  <nav class="navbar navbar-expand-lg">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default text-white">Connexion</button>
+      <button type="button" class="btn btn-default dropdown-toggle text-white" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu" >
+        <a class="dropdown-item" href="<%= new_user_registration_path %>"> S'inscrire</a>
+        <a class="dropdown-item" href="<%= new_user_session_path %>"> Se connecter</a>
+      </div>
+    </div>
+  </nav>
+
+
+<% end %> 
+  
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

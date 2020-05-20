@@ -1,21 +1,2 @@
-<div class="jumbotron jumbotron-fluid" id="jumbotron_welcome">
-  <div class="container text-center">
-    <h1 class="display-4 m-2 ml-4 mt-4 text-white">Bienvenue sur Eventbrite !</h1>
-    <p class="lead m-2 ml-4 mb-5 text-center"></p>
-  </div>
-</div>
-
-<div class="card-deck">
-  <% @events.each do |event|%>
-    <div class="col-lg-3 col-md-6 mb-3">
-      <div class="card text-center my-3">
-        <div class="card-body">
-          <h5 class="card-title ">Evènement n° <%= event.id %></h5>
-          <h5 class="card-title text-secondary"> Titre : <%= event.title%></h5>
-          <p class="card-text"> Lieu de l'évènement: <%= event.location %></p>
-          <a href="<%= event_path(event.id) %>" class="btn btn-info text-center">Voir l'évenement</a><br><br>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'events/jumbotron'%>
+<%= render 'events/events_index'%>

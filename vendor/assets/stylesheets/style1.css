@@ -1,0 +1,40 @@
+body{
+  margin: 0;
+}
+
+.navbar{
+  background-color: #A74AFF;
+  margin-top: -60px;
+}
+
+.background-big-jumbotron{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%),
+    url("https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#3E3F3A;
+}
+
+.background-small-jumbotron{
+    height: 250px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.4) 100%),
+    url("https://images.unsplash.com/photo-1480380799266-582d808d748a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#fff;
+}
+
+/* .footer{
+  position: fixed;
+  left: 0;
+  right:0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #5DD989;
+  padding-top: 20px;
+} */
+
+

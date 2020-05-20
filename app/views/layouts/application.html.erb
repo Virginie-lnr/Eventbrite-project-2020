@@ -10,66 +10,14 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-<!-- Navbar -->
-<% if user_signed_in? %> 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="<%= root_path %>">Eventbrite</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="<%= new_event_path %>">Créer un évènement <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-    </ul>
-
-  <div class="btn-group">
-    <button type="button" class="nav-item btn btn-default text-white">Mon profile</button>
-    <button type="button" class="btn btn-default dropdown-toggle text-white" data-toggle="dropdown">
-      <span class="caret"></span>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu" >
-      <a class="dropdown-item" href="<%= edit_user_registration_path %>">Editer mon profile</a>
-      <a class="dropdown-item" href="<%= user_path(current_user) %>">Voir mon profile</a>
-      <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="DELETE">Se déconnecter</a>
-    </div>
-  </div>
- </div>
-</nav>
-
-<% else %>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="btn-group">
-      <button type="button" class="btn btn-default text-white">Connexion</button>
-      <button type="button" class="btn btn-default dropdown-toggle text-white" data-toggle="dropdown">
-        <span class="caret"></span>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu" >
-        <a class="dropdown-item" href="<%= new_user_registration_path %>"> S'inscrire</a>
-        <a class="dropdown-item" href="<%= new_user_session_path %>"> Se connecter</a>
-      </div>
-    </div>
-  </nav>
-
-
-<% end %> 
-<!-- FIN Navbar -->
-
+    <%= render 'layouts/navbar' %>
 
     <% if flash[:success] %>
     <div class="alert alert-success">
@@ -84,14 +32,7 @@
     <% end %>
 
     <%= yield %>
-
-<footer class="py-3 bg-dark mt-5">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; made by Virginie 🐯2020</p>
-  </div>
-  <!-- /.container -->
-</footer>
-
+  <%= render 'layouts/footer' %>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

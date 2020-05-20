@@ -1,0 +1,49 @@
+<div class="card-deck justify-content-center">
+    <div class="col-lg-4 col-md-6 mb-3">
+      <div class="card text-center my-3">
+        <div class="card-body">
+          <h5 class="card-title ">Evènement n° <%= @event.id %></h5>
+          <h5 class="card-title text-secondary"> Titre : <%= @event.title%></h5>
+
+          <%if @event.avatar_event.attached?%>
+          <%= image_tag @event.avatar_event, alt: 'avatar' %>
+          <%else%>
+          <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
+          <%end%>
+
+          <p class="card-text"> Début: <%= @event.start_date %> </p>
+          <p class="card-text"> Prix: <%= @event.price %> cents</p>
+          <p class="card-text"> Durée: <%= @event.duration %></p>
+          <p class="card-text"> Lieu de l'évènement: <%= @event.location %></p>
+          <p class="card-text"> Créé par l'utilisateur:  <%= @event.admin.email %></p>
+          <%= form_tag subscribe_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+              <label class="amount">
+                <p>Pour rejoindre l'évènement, vous devez procéder au paiement:</p>
+                <span>Montant: <%= @event.price.to_f / 100 %>€</span>
+              </label>
+            </article>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="<%= @event.price %>"
+                    data-currency="eur"
+                    data-locale="auto"></script>
+          <% end %>
+
+          <% if current_user == @event.admin %>
+            <a href="<%= edit_event_path(@event.id) %>" class="btn btn-outline-secondary text-center ml-3 mt-2">Editer l'évènement</a>
+            <a href="<%= event_path(@event.id) %>" class="btn btn-danger text-center ml-3 mt-2" data-confirm="are you sure?" data-method="DELETE">Supprimer l'évènement</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+
+<%= render 'participants_list'%>

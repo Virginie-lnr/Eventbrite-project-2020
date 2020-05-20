@@ -8,15 +8,13 @@
     <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
   <%end%>
 
-  <h4>Souhaitez-vous changer d'avatar ?</h4>
-  <%= form_tag user_avatars_path(@user), multipart: true do %>
+  <h4 class="mt-3">Souhaitez-vous changer d'avatar ?</h4>
+    <%= form_tag user_avatars_path(@user), multipart: true do %>
     <%= file_field_tag :avatar %>
     <%= submit_tag "mettre à jour" %>
   <% end %>
 </div>
 <!-- Fin ajout d'avatar-->
-
-
 </div>
 
 

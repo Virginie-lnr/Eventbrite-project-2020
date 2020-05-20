@@ -6,6 +6,8 @@ class Event < ApplicationRecord
   # Un événement appartient à un administrateur (utilisateur).
   belongs_to :admin, class_name: 'User'
 
+  has_one_attached :avatar_event
+
   # presence obligatoire
   validates :start_date, :duration, :title, :description, :price, :location,
   presence: true
